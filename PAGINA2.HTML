@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Landing Page Incrível</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        scroll-behavior: smooth;
+      }
+
+      /* HEADER COM VÍDEO */
+      .video-header {
+        position: relative;
+        height: 100vh;
+        overflow: hidden;
+      }
+
+      .video-header video {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        min-width: 100%;
+        min-height: 100%;
+        width: auto;
+        height: auto;
+        z-index: -1;
+        transform: translate(-50%, -50%);
+        object-fit: cover;
+      }
+
+      .video-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+      }
+
+      .video-content {
+        position: relative;
+        z-index: 1;
+        height: 100%;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        flex-direction: column;
+      }
+
+      h1,
+      h2 {
+        font-weight: bold;
+      }
+
+      .section-img {
+        background-size: cover;
+        background-position: center;
+        color: white;
+        padding: 100px 0;
+        position: relative;
+      }
+
+      .section-img::before {
+        content: "";
+        background: rgba(0, 0, 0, 0.6);
+        position: absolute;
+        inset: 0;
+      }
+
+      .section-img .container {
+        position: relative;
+        z-index: 2;
+      }
+
+      footer {
+        background: #000;
+        color: #fff;
+        padding: 30px 0;
+        text-align: center;
+      }
+
+      .fade-in {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: all 0.8s ease;
+      }
+
+      .fade-in.aparecer {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="#">TOP SITE</a>
+        <button
+          class="navbar-toggler"
+          data-bs-toggle="collapse"
+          data-bs-target="#nav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="nav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a href="#inicio" class="nav-link">Início</a>
+            </li>
+            <li class="nav-item">
+              <a href="#sobre" class="nav-link">Sobre</a>
+            </li>
+            <li class="nav-item">
+              <a href="#projetos" class="nav-link">Projetos</a>
+            </li>
+            <li class="nav-item">
+              <a href="#contato" class="nav-link">Contato</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Header com vídeo -->
+    <header class="video-header" id="inicio">
+      <video autoplay muted loop>
+        <source
+          src="https://www.w3schools.com/howto/rain.mp4"
+          type="video/mp4"
+        />
+      </video>
+      <div class="video-overlay"></div>
+      <div class="video-content">
+        <h1>Bem-vindo ao Futuro</h1>
+        <p>Design + Tecnologia + Inovação</p>
+        <a href="#sobre" class="btn btn-primary mt-4">Saiba Mais</a>
+      </div>
+    </header>
+
+    <!-- Sobre -->
+    <section
+      id="sobre"
+      class="section-img"
+      style="
+        background-image: url('https://source.unsplash.com/1600x900/?technology');
+      "
+    >
+      <div class="container text-center text-white fade-in">
+        <h2>Quem Somos</h2>
+        <p>
+          Especialistas em soluções criativas, transformamos ideias em
+          realidades digitais com tecnologia de ponta.
+        </p>
+      </div>
+    </section>
+
+    <!-- Projetos -->
+    <section id="projetos" class="py-5 bg-light">
+      <div class="container text-center fade-in">
+        <h2 class="mb-4">Projetos Recentes</h2>
+        <div class="row g-4">
+          <div class="col-md-4">
+            <img
+              src="https://source.unsplash.com/400x300/?webdesign"
+              class="img-fluid rounded"
+            />
+            <h5 class="mt-2">Site Responsivo</h5>
+          </div>
+          <div class="col-md-4">
+            <img
+              src="https://source.unsplash.com/400x300/?app"
+              class="img-fluid rounded"
+            />
+            <h5 class="mt-2">Aplicativo Mobile</h5>
+          </div>
+          <div class="col-md-4">
+            <img
+              src="https://source.unsplash.com/400x300/?dashboard"
+              class="img-fluid rounded"
+            />
+            <h5 class="mt-2">Dashboard Interativo</h5>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contato -->
+    <section
+      id="contato"
+      class="section-img"
+      style="
+        background-image: url('https://source.unsplash.com/1600x900/?contact');
+      "
+    >
+      <div class="container text-center fade-in">
+        <h2>Entre em Contato</h2>
+        <p>Preencha o formulário abaixo e fale com a gente:</p>
+        <form class="row g-3 justify-content-center">
+          <div class="col-md-4">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Seu nome"
+              required
+            />
+          </div>
+          <div class="col-md-4">
+            <input
+              type="email"
+              class="form-control"
+              placeholder="Seu e-mail"
+              required
+            />
+          </div>
+          <div class="col-md-8">
+            <textarea
+              class="form-control"
+              rows="4"
+              placeholder="Sua mensagem"
+              required
+            ></textarea>
+          </div>
+          <div class="col-12">
+            <button class="btn btn-light">Enviar</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 2025 Meu Site Incrível - Todos os direitos reservados</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      // Fade in animado ao rolar
+      const faders = document.querySelectorAll(".fade-in");
+      window.addEventListener("scroll", () => {
+        faders.forEach((el) => {
+          const top = el.getBoundingClientRect().top;
+          if (top < window.innerHeight - 100) {
+            el.classList.add("aparecer");
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

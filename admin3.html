@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Painel Admin - Galáxias Store</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <style>
+      body {
+        background-color: #eef1f5;
+      }
+      .admin-sidebar {
+        width: 250px;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color: #202940;
+        color: white;
+        padding-top: 20px;
+      }
+      .admin-sidebar a {
+        display: block;
+        color: white;
+        padding: 15px 20px;
+        text-decoration: none;
+      }
+      .admin-sidebar a:hover {
+        background-color: #33415c;
+      }
+      .admin-content {
+        margin-left: 250px;
+        padding: 40px;
+      }
+      .card {
+        border: none;
+        border-radius: 10px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      }
+      .form-section,
+      .list-section {
+        background: white;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        margin-top: 30px;
+      }
+      table img {
+        width: 50px;
+        height: auto;
+        border-radius: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="admin-sidebar">
+      <h4 class="text-center">Admin</h4>
+      <a href="#"><i class="fas fa-box"></i> Gerenciar Produtos</a>
+      <a href="#"><i class="fas fa-users"></i> Gerenciar Clientes</a>
+      <a href="#"><i class="fas fa-receipt"></i> Gerenciar Pedidos</a>
+      <a href="#"><i class="fas fa-cog"></i> Configurações</a>
+      <a href="#"><i class="fas fa-sign-out-alt"></i> Sair</a>
+    </div>
+
+    <div class="admin-content">
+      <h2>Painel Administrativo</h2>
+      <div class="row mt-4">
+        <div class="col-md-4">
+          <div class="card p-4 text-center">
+            <i class="fas fa-box fa-2x mb-2 text-primary"></i>
+            <h5>120 Produtos</h5>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card p-4 text-center">
+            <i class="fas fa-users fa-2x mb-2 text-success"></i>
+            <h5>320 Clientes</h5>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card p-4 text-center">
+            <i class="fas fa-receipt fa-2x mb-2 text-warning"></i>
+            <h5>87 Pedidos</h5>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-section">
+        <h4><i class="fas fa-plus-circle"></i> Cadastrar Novo Produto</h4>
+        <form class="mt-4">
+          <div class="row mb-3">
+            <div class="col-md-6">
+              <label class="form-label">Nome do Produto</label>
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Ex: Camiseta Galáctica"
+              />
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Preço</label>
+              <input
+                type="number"
+                class="form-control"
+                step="0.01"
+                placeholder="Ex: 99.90"
+              />
+            </div>
+          </div>
+          <div class="row mb-3">
+            <div class="col-md-6">
+              <label class="form-label">Categoria</label>
+              <select class="form-select">
+                <option>Moda</option>
+                <option>Eletrônicos</option>
+                <option>Games</option>
+                <option>Acessórios</option>
+              </select>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Imagem</label>
+              <input type="file" class="form-control" />
+            </div>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Descrição</label>
+            <textarea
+              class="form-control"
+              rows="4"
+              placeholder="Descrição detalhada do produto..."
+            ></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Salvar Produto</button>
+        </form>
+      </div>
+
+      <div class="list-section">
+        <h4 class="mb-3"><i class="fas fa-list"></i> Lista de Produtos</h4>
+        <table class="table table-bordered table-hover">
+          <thead class="table-light">
+            <tr>
+              <th>#</th>
+              <th>Imagem</th>
+              <th>Nome</th>
+              <th>Categoria</th>
+              <th>Preço</th>
+              <th>Ações</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>
+                <img src="https://via.placeholder.com/50" alt="Produto" />
+              </td>
+              <td>Camiseta Galáctica</td>
+              <td>Moda</td>
+              <td>R$ 99,90</td>
+              <td>
+                <button class="btn btn-sm btn-warning">
+                  <i class="fas fa-edit"></i>
+                </button>
+                <button class="btn btn-sm btn-danger">
+                  <i class="fas fa-trash"></i>
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>
+                <img src="https://via.placeholder.com/50" alt="Produto" />
+              </td>
+              <td>Headset Gamer</td>
+              <td>Eletrônicos</td>
+              <td>R$ 199,00</td>
+              <td>
+                <button class="btn btn-sm btn-warning">
+                  <i class="fas fa-edit"></i>
+                </button>
+                <button class="btn btn-sm btn-danger">
+                  <i class="fas fa-trash"></i>
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
